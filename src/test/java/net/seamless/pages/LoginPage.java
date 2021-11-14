@@ -15,7 +15,7 @@ public class LoginPage extends BasePage{
     public WebElement user;
 
     @FindBy (xpath = "//input[@id='password']")
-    public WebElement password;
+    public WebElement pass;
 
     @FindBy(xpath = "//input[@id='submit-form']")
     public WebElement loginButton;
@@ -26,17 +26,23 @@ public class LoginPage extends BasePage{
     @FindBy(css = "#password")
     public WebElement passWordDots;
 
-    public void login (String userName, String passWord){
-        user.sendKeys(userName);
-        password.sendKeys(passWord);
-        loginButton.click();
+    @FindBy(css = "a[class='toggle-password']")
+    public WebElement eyeIcon;
+
+    @FindBy(id = "lost-password")
+    public WebElement forgotPassword;
+
+    public void enterUsername (String username){
+        user.sendKeys(username);
+    }
+    public void enterPassword (String password){
+        pass.sendKeys(password);
     }
     public String getErrorMessage(WebElement element){
         return element.getAttribute("validationMessage");
     }
-    public void getPaswordDots(String userName, String passWord){
-        user.sendKeys(userName);
-        password.sendKeys(passWord);
 
-    }
+
+
+
 }
