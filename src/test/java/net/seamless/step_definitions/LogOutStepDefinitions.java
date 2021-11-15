@@ -36,11 +36,7 @@ public class LogOutStepDefinitions {
 
     @Then("The user should see a drop down menu and click on log out option")
     public void the_user_should_see_a_drop_down_menu_and_click_on_log_out_option() {
-        BrowserUtils.waitFor(15);
-        List<String> actualOptions = BrowserUtils.getElementsText((List<WebElement>) homePage.setStatus);
 
-
-        System.out.println("actualOptions = " + actualOptions);
     }
 
     @Then("The user should log out and login page opens")
