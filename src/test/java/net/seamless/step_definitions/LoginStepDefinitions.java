@@ -108,6 +108,9 @@ public class LoginStepDefinitions {
         BrowserUtils.waitFor(5);
         Assert.assertTrue(resetPassword.reset.isDisplayed());
     }
-
+    @Then("the {string} placeholder should be displayed on the {string} input box")
+    public void the_placeholder_should_be_displayed_on_the_input_box(String placeholder, String element) {
+        Assert.assertEquals(placeholder,loginPage.getPlaceholder(element));
+    }
 
 }

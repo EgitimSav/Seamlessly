@@ -10,4 +10,7 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "span[class='user-status-menu-item__header']")
     public WebElement profileName;
+
+    @FindBy(xpath = "//div//div//nav//li[@data-id]")
+    public WebElement setStatus;
 }

@@ -42,7 +42,18 @@ public class LoginPage extends BasePage{
         return element.getAttribute("validationMessage");
     }
 
-
-
-
+    public String getPlaceholder(String webelement){
+        WebElement element;
+      switch (webelement){
+            case "username":
+                element = user;
+                break;
+            case "password":
+                element = pass;
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + webelement);
+        }
+        return element.getAttribute("placeholder");
+    }
 }
